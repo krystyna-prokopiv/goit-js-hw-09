@@ -30,6 +30,8 @@ function populateText() {
     if (text) {
         input.value = text.email
         textarea.value = text.message
+        formData.email = text.email
+        formData.message = text.message
     }
 }
 
@@ -47,6 +49,9 @@ function handleSubmit(ev) {
     
     
     console.log(formData);
+
+    formData.email = ""
+    formData.message = ""
     localStorage.removeItem("feedback-form-state")
     ev.currentTarget.reset()
 }
